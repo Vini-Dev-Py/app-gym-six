@@ -1,0 +1,70 @@
+#tabela-conteudo {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.tabela {
+    width: 75%;
+    margin-right: 15px;
+}
+
+.conteudo {
+    width: 25%;
+    margin-left: 15px;
+}
+
+#alunos {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#alunos td,
+#alunos th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#alunos tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#alunos tr:hover {
+    background-color: #ddd;
+}
+
+#alunos th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #003973;
+    color: white;
+}
+
+.title {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.cards {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.card {
+    border: 1px solid #000;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    padding: 15px;
+}
+
+.criar-aluno {
+    border: 1px solid #000;
+    border-radius: 5px;
+    padding: 15px;
+    background-color: #003973;
+    color: #fff;
+}

@@ -1,0 +1,79 @@
+.inputs {
+    margin-top: 20px;
+}
+
+.container-input {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.inputs input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.criar-aluno-button,
+.home {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.home {
+    background-color: #333;
+}
+
+.flex-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row;
+}
+
+@media (max-width: 600px) {
+    .container-input {
+        margin-bottom: 10px;
+    }
+
+    .criar-aluno-button,
+    .home {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .inputs input {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .flex-buttons {
+        justify-content: space-around;
+    }
+}
+
+@media (max-width: 400px) {
+    label {
+        font-size: 14px;
+    }
+
+    .inputs input {
+        font-size: 14px;
+    }
+
+    .flex-buttons {
+        justify-content: center;
+        flex-direction: column-reverse;
+    }
+}
