@@ -1,0 +1,270 @@
+.header-training {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+h1.title-member-training {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.go-back {
+    appearance: none;
+    background-color: #333;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-left: 10px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    line-height: normal;
+    outline: none;
+    text-align: center;
+    text-decoration: none;
+    transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+    user-select: none;
+    touch-action: manipulation;
+    will-change: transform;
+}
+
+.go-back:disabled {
+    pointer-events: none;
+}
+
+.go-back:hover {
+    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+    transform: translateY(-2px);
+}
+
+.go-back:active {
+    box-shadow: none;
+    transform: translateY(0);
+}
+
+.button-create {
+    align-items: center;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    background: #17b31c;
+    border: 1px solid #E2E8F0;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    box-sizing: border-box;
+    color: #ffffff;
+    display: inline-flex;
+    font-family: Inter, sans-serif;
+    font-weight: 700;
+    justify-content: center;
+    line-height: 24px;
+    overflow-wrap: break-word;
+    padding: 10px;
+    text-decoration: none;
+    width: auto;
+    border-radius: 8px;
+    cursor: pointer;
+    touch-action: manipulation;
+    width: 110px;
+    transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+}
+
+.button-create:hover {
+    background: #069e0c;
+    transform: translateY(-2px);
+}
+
+.button-delete {
+    align-items: center;
+    margin-bottom: 10px;
+    background: #e62143;
+    border: 1px solid #E2E8F0;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    box-sizing: border-box;
+    color: #ffffff;
+    display: inline-flex;
+    font-family: Inter, sans-serif;
+    font-weight: 700;
+    justify-content: center;
+    line-height: 24px;
+    overflow-wrap: break-word;
+    padding: 10px;
+    text-decoration: none;
+    width: auto;
+    border-radius: 8px;
+    cursor: pointer;
+    touch-action: manipulation;
+    width: 110px;
+    transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+}
+
+.button-delete:hover {
+    background: #d10e2f;
+    transform: translateY(-2px);
+}
+
+.training {
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    padding: 10px;
+    margin-bottom: 20px;
+    transition: 0.5s;
+}
+
+.training:hover {
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+        rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+        rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.training-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.exercise-name {
+    font-weight: bold;
+    flex-basis: 100%;
+}
+
+.button-edit {
+    align-items: center;
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    box-sizing: border-box;
+    color: #1A202C;
+    display: inline-flex;
+    font-family: Inter, sans-serif;
+    font-size: 1rem;
+    justify-content: center;
+    overflow-wrap: break-word;
+    padding: 10px;
+    text-decoration: none;
+    width: auto;
+    border-radius: 8px;
+    cursor: pointer;
+    touch-action: manipulation;
+    transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+}
+
+.button-edit:hover {
+    background: #f8f8ff;
+    box-shadow: -15px -15px 30px 0 #fff, 15px 15px 30px 0 #1d0dca17;
+    transform: translateY(-2px);
+}
+
+.button-delete-training {
+    align-items: center;
+    background: #e62143;
+    border: 1px solid #E2E8F0;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    box-sizing: border-box;
+    color: #fff;
+    display: inline-flex;
+    font-family: Inter, sans-serif;
+    font-size: 1rem;
+    justify-content: center;
+    overflow-wrap: break-word;
+    padding: 10px;
+    margin-left: 10px;
+    text-decoration: none;
+    width: auto;
+    border-radius: 8px;
+    cursor: pointer;
+    touch-action: manipulation;
+    transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+}
+
+.button-delete-training:hover {
+    background: #d10e2f;
+    box-shadow: -15px -15px 30px 0 #fff, 15px 15px 30px 0 #1d0dca17;
+    transform: translateY(-2px);
+}
+
+.expanded-content {
+    display: none;
+    padding: 10px;
+}
+
+.expanded {
+    background-color: #f5f5f5;
+}
+
+.expanded .expanded-content {
+    display: block;
+}
+
+.expanded video {
+    max-width: 100%;
+    height: auto;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px;
+    height: 0;
+    overflow: hidden;
+}
+
+.video-container iframe,
+.video-container object,
+.video-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+@media screen and (max-width: 600px) {
+    .training-header {
+        flex-direction: column;
+    }
+
+    .training-header>div {
+        flex-basis: 100%;
+        margin-top: 10px;
+    }
+}
+
+.create-training {
+    appearance: none;
+    background-color: #17b31c;
+    border: none;
+    padding: 10px 20px;
+    margin-left: 5px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    line-height: normal;
+    outline: none;
+    text-align: center;
+    text-decoration: none;
+    transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+    user-select: none;
+    touch-action: manipulation;
+    will-change: transform;
+}
+
+.create-training:disabled {
+    pointer-events: none;
+}
+
+.create-training:hover {
+    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+    transform: translateY(-2px);
+}
+
+.create-training:active {
+    box-shadow: none;
+    transform: translateY(0);
+}

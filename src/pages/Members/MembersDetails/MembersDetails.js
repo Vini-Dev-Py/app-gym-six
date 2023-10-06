@@ -15,8 +15,8 @@ export default function MembersDetails() {
 
     const daysPT = ["Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado", "Domingo"];
 
-    const navigateToHome = async () => {
-        navigate("/");
+    function navigateToTraining(url) {
+        navigate(url);
     }
 
     useEffect(() => {
@@ -81,7 +81,7 @@ export default function MembersDetails() {
                                 </h3>
                             </div>
                             <div>
-                                <button className="edit-training" onClick={null}>
+                                <button className="edit-training" onClick={() => {navigateToTraining(`/aluno/${id}/treino/${day}/`)}}>
                                     Editar treino
                                 </button>
                                 <button className="delete-trainign" onClick={null}>
