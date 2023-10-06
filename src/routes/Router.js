@@ -5,6 +5,7 @@ import Login from '../pages/Login/Login';
 import Home from '../pages/Home/Home';
 import MembersCreate from '../pages/Members/MembersCreate/MembersCreate';
 import MembersDetails from '../pages/Members/MembersDetails/MembersDetails';
+import Training from '../pages/Training/Training';
 
 export default function Router() {
     const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -41,6 +42,14 @@ export default function Router() {
                     element={
                         <PrivateRoute isAuthenticated={isAuthenticated}>
                             <MembersDetails />
+                        </PrivateRoute>
+                    }
+                />
+                <Route
+                    path="/aluno/:id/treino/:day/"
+                    element={
+                        <PrivateRoute isAuthenticated={isAuthenticated}>
+                            <Training/>
                         </PrivateRoute>
                     }
                 />

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { useParams, useNavigate } from "react-router-dom";
-import Loading from '../../../components/Loading/Loading';
+import { Link, useParams, useNavigate } from "react-router-dom";
+import Loading from "../../../components/Loading/Loading";
 import { getMember } from "../../../services/getMember";
 import "./MembersDetails.css";
 
@@ -9,6 +9,10 @@ export default function MembersDetails() {
     const { id } = useParams();
     const [aluno, setAluno] = useState(null);
     const navigate = useNavigate();
+
+    const days = ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"];
+
+    const daysPT = ["Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado", "Domingo"];
 
     const navigateToHome = async () => {
         navigate("/");
@@ -34,11 +38,14 @@ export default function MembersDetails() {
 
     return (
         <div className="container">
-            <div>
+            <header className="header-member">
                 <h1 className="title-member-details">
                     Detalhes do aluno
                 </h1>
-            </div>
+                <button onClick={navigateToHome} className="home">
+                    Home
+                </button>
+            </header>
             <div>
                 <table id="aluno">
                     <tbody>
@@ -56,7 +63,7 @@ export default function MembersDetails() {
                         </tr>
                         <tr>
                             <td>RG:</td>
-                            <td>{aluno.RG}</td>
+                            <td>{aluno.RG !== null ? aluno.RG : "Sem registro"}</td>
                         </tr>
                         <tr>
                             <td>CPF:</td>
@@ -64,6 +71,27 @@ export default function MembersDetails() {
                         </tr>
                     </tbody>
                 </table>
+            </div>
+            <div>
+                {
+                    days.map((day, index) => (
+                        <div className="day-training">
+                            <div>
+                                <h3>
+                                    <Link className="link" to={`/aluno/${id}/treino/${day}/`}>{daysPT[index]}</Link>
+                                </h3>
+                            </div>
+                            <div>
+                                <button className="edit-training" onClick={null}>
+                                    Editar treino
+                                </button>
+                                <button className="delete-trainign" onClick={null}>
+                                    Limpar treino
+                                </button>
+                            </div>
+                        </div>
+                    ))
+                }
             </div>
         </div>
     )
