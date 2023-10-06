@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
+import ButtonHome from "../../../components/ButtonHome/ButtonHome";
 import Loading from "../../../components/Loading/Loading";
 import { getMember } from "../../../services/getMember";
 import "./MembersDetails.css";
@@ -42,9 +43,7 @@ export default function MembersDetails() {
                 <h1 className="title-member-details">
                     Detalhes do aluno
                 </h1>
-                <button onClick={navigateToHome} className="home">
-                    Home
-                </button>
+                <ButtonHome />
             </header>
             <div>
                 <table id="aluno">

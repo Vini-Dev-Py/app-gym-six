@@ -18,6 +18,7 @@
     font-family: Arial, Helvetica, sans-serif;
     border-collapse: collapse;
     width: 100%;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 }
 
 #alunos td,
@@ -38,7 +39,7 @@
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
-    background-color: #003973;
+    background-color: #1064b8;
     color: white;
 }
 
@@ -55,16 +56,25 @@
 }
 
 .card {
-    border: 1px solid #000;
+    border: none;
     border-radius: 5px;
     margin-bottom: 15px;
     padding: 15px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 }
 
 .criar-aluno {
-    border: 1px solid #000;
+    border: none;
     border-radius: 5px;
     padding: 15px;
-    background-color: #003973;
+    background-color: #1064b8;
+    transition: 0.5s;
+    font-weight: 700;
     color: #fff;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+.criar-aluno:hover {
+    background: #3f86cd;
+    cursor: pointer;
 }

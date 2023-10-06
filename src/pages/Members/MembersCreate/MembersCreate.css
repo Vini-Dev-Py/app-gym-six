@@ -19,19 +19,14 @@ label {
     border-radius: 5px;
 }
 
-.criar-aluno-button,
-.home {
+.criar-aluno-button {
     background-color: #007bff;
     color: #fff;
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
-    margin-right: 10px;
-}
-
-.home {
-    background-color: #333;
+    margin-left: 10px;
 }
 
 .flex-buttons {

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import ButtonHome from "../../../components/ButtonHome/ButtonHome";
 import { addUserToPersonal } from "../../../services/addUserToPersonal";
 import { createMember } from "../../../services/createMember";
 import "./MembersCreate.css";
@@ -118,9 +119,7 @@ export default function MembersCreate() {
                     </div>
                     <div className="flex-buttons">
                         <div>
-                            <button onClick={navigateToHome} className="home">
-                                Home
-                            </button>
+                            <ButtonHome />
                         </div>
                         <div>
                             <button className="criar-aluno-button" type="submit">
