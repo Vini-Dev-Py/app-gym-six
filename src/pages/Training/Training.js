@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 import Loading from "../../components/Loading/Loading";
 import ButtonHome from "../../components/ButtonHome/ButtonHome";
-import { getTrainingMember } from "../../services/getTrainingsMember";
+import { getTrainingsMember } from "../../services/getTrainingsMember";
 import YouTube from "react-youtube";
 import "./Training.css";
+import { deleteTraining } from "../../services/deleteTraining";
+import { deleteAllTrainings } from "../../services/deleteAllTrainings";
 
 export default function Training() {
     const { id, day } = useParams();
@@ -13,18 +14,25 @@ export default function Training() {
 
     const [trainings, setTrainings] = useState(null);
     const [expandedIndex, setExpandedIndex] = useState(null);
-    const [orderedTrainings, setOrderedTrainings] = useState(trainings);
 
     function navigateToMember() {
         navigate(`/aluno/detalhes/${id}`);
     }
 
     function navigateToCreateTraining() {
-        var position = trainings.at(-1).position;
+        try {
+            var position = trainings.at(-1).position ? trainings.at(-1).position : 1;
+        } catch (error) {
+            var position = 1;
+        }
 
         localStorage.setItem('position', position);
 
         navigate(`/aluno/${id}/treino/${day}/criar`);
+    }
+
+    function navigateToEditTraining(id_training) {
+        navigate(`/aluno/${id}/treino/${day}/editar/${id_training}`);
     }
 
     function extractYouTubeVideoId(url) {
@@ -40,22 +48,28 @@ export default function Training() {
         setExpandedIndex(index === expandedIndex ? null : index);
     };
 
-    const onDragEnd = (result) => {
-        if (!result.destination) {
-            return;
-        }
-    
-        const updatedTrainings = [...orderedTrainings];
-        const [reorderedItem] = updatedTrainings.splice(result.source.index, 1);
-        updatedTrainings.splice(result.destination.index, 0, reorderedItem);
-    
-        setOrderedTrainings(updatedTrainings);
-    };
+    function orderTrainings(id) {
+        setTrainings((prevTreinings) => 
+            prevTreinings.filter((training) => training.id !== id)
+        );
+    }
+
+    async function handlerDeleteTraining(id) {
+        const response = await deleteTraining(id);
+
+        response ? orderTrainings(id) : console.error("Erro ao deletar treino");
+    }
+
+    async function handlerDeleteAllTrainings(id) {
+        const response = await deleteAllTrainings(id);
+
+        setTrainings([]);
+    }
     
 
     useEffect(() => {
         const fetchData = async () => {
-            const response = await getTrainingMember(id);
+            const response = await getTrainingsMember(id, day);
             setTrainings(response.data["data"]);
         };
 
@@ -86,7 +100,7 @@ export default function Training() {
                     <button className="button-create" onClick={() => navigateToCreateTraining()}>
                         Criar bloco
                     </button>
-                    <button className="button-delete">
+                    <button className="button-delete" onClick={() => handlerDeleteAllTrainings(id)}>
                         Limpar treino
                     </button>
                 </div>
@@ -101,10 +115,10 @@ export default function Training() {
                                 <div className="reps">Repetições: {training.repes}</div>
                                 <div className="rest-time">Tempo de descanso: {training.rest_time}</div>
                                 <div>
-                                    <button className="button-edit">
+                                    <button className="button-edit" onClick={() => navigateToEditTraining(training.id)}>
                                         Editar
                                     </button>
-                                    <button className="button-delete-training">
+                                    <button className="button-delete-training" onClick={() => { handlerDeleteTraining(training.id) }}>
                                         Excluir
                                     </button>
                                 </div>

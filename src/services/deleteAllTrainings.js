@@ -1,11 +1,11 @@
 import axios from 'axios';
 import { url } from './api';
 
-export const getTrainingsMember = async (id, day) => {
+export const deleteAllTrainings = async (id) => {
     try {
         const token = localStorage.getItem("token");
 
-        const response = await axios.get(url + `/workouts/member/${id}/${day}`, {
+        const response = await axios.delete(url + `/trainings/all/${id}`, {
             headers: {
                 Authorization: `Bearer ${token}`,
                 "Content-Type": "application/json",

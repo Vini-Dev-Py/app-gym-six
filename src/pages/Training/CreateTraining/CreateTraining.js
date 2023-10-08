@@ -4,6 +4,7 @@ import Loading from "../../../components/Loading/Loading";
 import ButtonHome from "../../../components/ButtonHome/ButtonHome";
 import { getUser } from "../../../services/getUser";
 import "../Training.css";
+import { createTraining } from "../../../services/createTraining";
 
 export default function CreateTraining() {
 
@@ -20,8 +21,12 @@ export default function CreateTraining() {
         day: day,
         id_user: id,
         id_personal_code: null,
-        position: localStorage.getItem("position") + 1
+        position: parseInt(localStorage.getItem("position")) + 1
     })
+
+    function navigateToMember() {
+        navigate(`/aluno/${id}/treino/${day}`);
+    }
 
     async function getUserLocal() {
         const response = await getUser();
@@ -36,11 +41,11 @@ export default function CreateTraining() {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        const response = null;
+        trainign.id_personal_code = personal.id_personal_code;
 
+        const response = await createTraining(trainign);
 
-
-        response ? navigate(`/`) : console.error("Erro ao criar o treino");
+        response ? navigate(`/aluno/${id}/treino/${day}`) : console.error("Erro ao criar o treino");
     }
 
     const handleChange = (e) => {
@@ -62,11 +67,21 @@ export default function CreateTraining() {
 
     return (
         <div className="container">
-            <div>
+            <header className="header">
                 <h2>
                     Criar treino
                 </h2>
-            </div>
+                <div className="flex-buttons">
+                    <div>
+                        <ButtonHome />
+                    </div>
+                    <div>
+                        <button className="go-back" onClick={() => { navigateToMember() }}>
+                            Voltar
+                        </button>
+                    </div>
+                </div>
+            </header>
             <div className="inputs">
                 <form onSubmit={handleSubmit}>
                     <div className="flex-inputs">
@@ -125,14 +140,6 @@ export default function CreateTraining() {
                         </div>
                     </div>
                     <div className="flex-buttons">
-                        <div>
-                            <button className="" type="submit">
-                                Voltar
-                            </button>
-                        </div>
-                        <div>
-                            <ButtonHome />
-                        </div>
                         <div>
                             <button className="create-training" type="submit">
                                 Criar treino

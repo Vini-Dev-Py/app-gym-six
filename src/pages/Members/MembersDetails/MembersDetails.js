@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import ButtonHome from "../../../components/ButtonHome/ButtonHome";
 import Loading from "../../../components/Loading/Loading";
+import { deleteAllTrainings } from "../../../services/deleteAllTrainings";
 import { getMember } from "../../../services/getMember";
 import "./MembersDetails.css";
 
@@ -17,6 +18,10 @@ export default function MembersDetails() {
 
     function navigateToTraining(url) {
         navigate(url);
+    }
+
+    async function handlerDeleteAllTrainings(id) {
+        const response = await deleteAllTrainings(id);
     }
 
     useEffect(() => {
@@ -84,7 +89,7 @@ export default function MembersDetails() {
                                 <button className="edit-training" onClick={() => {navigateToTraining(`/aluno/${id}/treino/${day}/`)}}>
                                     Editar treino
                                 </button>
-                                <button className="delete-trainign" onClick={null}>
+                                <button className="delete-trainign" onClick={() => handlerDeleteAllTrainings(id)}>
                                     Limpar treino
                                 </button>
                             </div>

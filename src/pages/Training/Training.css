@@ -234,7 +234,13 @@ h1.title-member-training {
     }
 }
 
-.create-training {
+header.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.create-training, .update-training {
     appearance: none;
     background-color: #17b31c;
     border: none;
@@ -255,16 +261,16 @@ h1.title-member-training {
     will-change: transform;
 }
 
-.create-training:disabled {
+.create-training:disabled, .update-training:disabled {
     pointer-events: none;
 }
 
-.create-training:hover {
+.create-training:hover, .update-training:hover {
     box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
     transform: translateY(-2px);
 }
 
-.create-training:active {
+.create-training:active .update-training:active {
     box-shadow: none;
     transform: translateY(0);
 }

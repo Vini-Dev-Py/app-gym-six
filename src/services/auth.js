@@ -16,7 +16,8 @@ export const signIn = async (email, password) => {
             name: name,
             email: email,
             role: role,
-            active: active
+            active: active,
+            id_personal_code: response.data["user"]["personal"]["id"]
         }));
 
         return (response.status === 200) ? response : false;
