@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import Loading from '../../../components/Loading/Loading';
+import { faUser } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import "./User.css";
 
 export default function User({ user }) {
 
@@ -14,8 +16,15 @@ export default function User({ user }) {
 
     return (
         <main>
-            <header>
-                <h2>Bem vindo {user.name}</h2>
+            <header className="header">
+                <div>
+                    <h2>Bem vindo {user.name}</h2>
+                </div>
+                <div>
+                    <button onClick={null} className="button-user">
+                        <FontAwesomeIcon className="icon-user" icon={faUser} />
+                    </button>
+                </div>
             </header>
             <section>
                 <div>
@@ -28,7 +37,7 @@ export default function User({ user }) {
                                     </h3>
                                 </div>
                                 <div>
-                                    <button className="edit-training" onClick={() => { navigateToTrainingMember(`/treino/${day}`) }}>
+                                    <button className="view-training" onClick={() => { navigateToTrainingMember(`/treino/${day}`) }}>
                                         Ver treino
                                     </button>
                                 </div>

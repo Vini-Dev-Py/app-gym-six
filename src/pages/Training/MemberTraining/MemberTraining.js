@@ -6,13 +6,14 @@ import { getTrainingsMember } from "../../../services/getTrainingsMember";
 import { getUser } from "../../../services/getUser";
 import YouTube from "react-youtube";
 import "../Training.css";
+import { getPersonal } from "../../../services/getPersonal";
 
 export default function MemberTraining() {
 
     const { day } = useParams();
     const navigate = useNavigate();
     const [trainings, setTrainings] = useState(null);
-    const [user, setUser] = useState(null);
+    const [personal, setPersonal] = useState(null);
     const [expandedIndex, setExpandedIndex] = useState(null);
 
     function extractYouTubeVideoId(url) {
@@ -28,6 +29,15 @@ export default function MemberTraining() {
         setExpandedIndex(index === expandedIndex ? null : index);
     };
 
+    function notifyPersonal() {
+        const phoneNumber = `${personal.phone}`;
+        const message = `Olá ${personal.name}, acabei de terminar o treino de hoje`;
+
+        const whatsappLink = `whatsapp://send?phone=${phoneNumber}&text=${encodeURIComponent(message)}`;
+
+        window.location.href = whatsappLink;
+    }
+
     useEffect(() => {
         const fetchData = async () => {
             var user = await getUser();
@@ -36,7 +46,10 @@ export default function MemberTraining() {
 
             const response = await getTrainingsMember(user.id, day);
 
+            const responsePersonal = await getPersonal(response.data["data"][0]["personal_user"]["id_user"]);
+
             setTrainings(response.data["data"]);
+            setPersonal(responsePersonal.data["data"]);
         };
 
         fetchData();
@@ -59,7 +72,7 @@ export default function MemberTraining() {
                 </div>
             </header>
             <section>
-            {trainings.map((training, index) => (
+                {trainings.map((training, index) => (
                     <div className={`training ${expandedIndex === index ? "expanded" : ""}`} key={training.id}>
                         <div onClick={() => toggleExpansion(index)}>
                             <div className="training-header">
@@ -78,6 +91,11 @@ export default function MemberTraining() {
                         )}
                     </div>
                 ))}
+            </section>
+            <section className="flex-buttons">
+                <button className="" onClick={() => notifyPersonal()}>
+                    Avisar personal
+                </button>
             </section>
         </div>
     )

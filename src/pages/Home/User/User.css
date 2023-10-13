@@ -1,0 +1,41 @@
+.button-user {
+    border: none;
+    background-color: transparent;
+}
+
+.icon-user {
+    font-size: 2rem;
+}
+
+.view-training {
+    align-items: center;
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    box-sizing: border-box;
+    color: #1A202C;
+    display: inline-flex;
+    font-family: Inter, sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    justify-content: center;
+    line-height: 24px;
+    overflow-wrap: break-word;
+    padding: 18px;
+    text-decoration: none;
+    width: auto;
+    border-radius: 8px;
+    cursor: pointer;
+    touch-action: manipulation;
+}
+
+.view-training:hover {
+    background: #f8f8ff;
+    box-shadow: -15px -15px 30px 0 #fff, 15px 15px 30px 0 #1d0dca17;
+}
+
+@media (max-width: 295px) {
+    .view-training {
+        padding: 10px;
+    }
+}

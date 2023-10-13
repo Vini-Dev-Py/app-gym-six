@@ -1,1 +1,1 @@
-export const url = 'https://d4b8-187-62-181-9.ngrok-free.app/api';
+export const url = 'http://localhost/api';
