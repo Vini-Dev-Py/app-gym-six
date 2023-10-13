@@ -1,1 +1,1 @@
-export const url = 'http://localhost/api';
+export const url = 'api-gym-six.vercel.app/api/api';
