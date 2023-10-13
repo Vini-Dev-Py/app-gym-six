@@ -111,6 +111,22 @@ export default function Personal({ user }) {
                                 </button>
                             </div>
                         </div>
+                        <div className="card">
+                            <div>
+                                <p className="title">Configurações</p>
+                            </div>
+                            <div>
+                                <button className="" onClick={null} disabled>
+                                    Meu perfil
+                                </button>
+                                <button className="" onClick={null} disabled>
+                                    Meu Plano
+                                </button>
+                                <button className="" onClick={null} disabled>
+                                    Pagamentos
+                                </button>
+                            </div>
+                        </div>
                     </section>
                 </div>
             </section>

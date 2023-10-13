@@ -19,10 +19,6 @@ export default function MembersCreate() {
 
     const navigate = useNavigate();
 
-    const navigateToHome = async () => {
-        navigate("/");
-    }
-
     const handleSubmit = async (e) => {
         e.preventDefault();
 
@@ -44,11 +40,16 @@ export default function MembersCreate() {
 
     return (
         <div className="container">
-            <div>
+            <header className="header">
                 <h2>
                     Criar aluno
                 </h2>
-            </div>
+                <div className="flex-buttons">
+                    <div>
+                        <ButtonHome />
+                    </div>
+                </div>
+            </header>
             <div className="inputs">
                 <form onSubmit={handleSubmit}>
                     <div className="flex-inputs">
@@ -118,9 +119,6 @@ export default function MembersCreate() {
                         </div>
                     </div>
                     <div className="flex-buttons">
-                        <div>
-                            <ButtonHome />
-                        </div>
                         <div>
                             <button className="criar-aluno-button" type="submit">
                                 Cadastrar Aluno

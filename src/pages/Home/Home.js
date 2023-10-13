@@ -36,7 +36,7 @@ export default function Home() {
                     <Personal user={user} />
                 ) :
                 (
-                    <User />
+                    <User user={user} />
                 )
             }
         </div>
