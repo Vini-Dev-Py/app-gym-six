@@ -85,8 +85,8 @@ export default function MembersDetails() {
                                     <Link className="link" to={`/aluno/${id}/treino/${day}/`}>{daysPT[index]}</Link>
                                 </h3>
                             </div>
-                            <div>
-                                <button className="edit-training" onClick={() => {navigateToTraining(`/aluno/${id}/treino/${day}/`)}}>
+                            <div className="flex-buttons-member">
+                                <button className="edit-training margin-bottom" onClick={() => {navigateToTraining(`/aluno/${id}/treino/${day}/`)}}>
                                     Editar treino
                                 </button>
                                 <button className="delete-trainign" onClick={() => handlerDeleteAllTrainings(id)}>

@@ -88,7 +88,7 @@ export default function Training() {
         <div className="container">
             <header className="header-training">
                 <h1 className="title-member-training">Treino do aluno</h1>
-                <div>
+                <div className="buttons-header">
                     <ButtonHome />
                     <button className="go-back" onClick={() => navigateToMember()}>
                         Voltar
@@ -96,7 +96,7 @@ export default function Training() {
                 </div>
             </header>
             <section>
-                <div>
+                <div className="create-delete-buttons">
                     <button className="button-create" onClick={() => navigateToCreateTraining()}>
                         Criar bloco
                     </button>

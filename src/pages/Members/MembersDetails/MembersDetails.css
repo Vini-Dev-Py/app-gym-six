@@ -134,8 +134,22 @@ h1.title-member-details {
     box-shadow: -15px -15px 30px 0 #fff, 15px 15px 30px 0 #1d0dca17;
 }
 
-@media (min-width: 768px) {
-    .edit-training {
-        padding: 18px;
+@media (max-width: 490px) {
+    .flex-buttons-member {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .edit-training, .delete-trainign {
+        padding: 10px;
+        font-weight: 100;
+        margin: 0;
+        width: 100%;
+    }
+
+    .margin-bottom {
+        margin-bottom: 10px;
     }
 }

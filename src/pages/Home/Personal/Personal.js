@@ -115,7 +115,7 @@ export default function Personal({ user }) {
                             <div>
                                 <p className="title">Configurações</p>
                             </div>
-                            <div>
+                            <div className="flex-buttons-personal">
                                 <button className="" onClick={null} disabled>
                                     Meu perfil
                                 </button>

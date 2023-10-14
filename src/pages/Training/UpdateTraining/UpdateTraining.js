@@ -67,15 +67,11 @@ export default function UpdateTraining() {
                 <h2>
                     Editar treino
                 </h2>
-                <div className="flex-buttons">
-                    <div>
-                        <ButtonHome />
-                    </div>
-                    <div>
-                        <button className="go-back" onClick={() => { navigateToMember() }}>
-                            Voltar
-                        </button>
-                    </div>
+                <div className="buttons-header">
+                    <ButtonHome />
+                    <button className="go-back" onClick={() => { navigateToMember() }}>
+                        Voltar
+                    </button>
                 </div>
             </header>
             <section className="inputs">

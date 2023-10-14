@@ -92,8 +92,8 @@ export default function MemberTraining() {
                     </div>
                 ))}
             </section>
-            <section className="flex-buttons">
-                <button className="" onClick={() => notifyPersonal()}>
+            <section className="flex-button-call-personal">
+                <button className="call-personal" onClick={() => notifyPersonal()}>
                     Avisar personal
                 </button>
             </section>
