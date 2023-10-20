@@ -12,10 +12,16 @@ export default function Personal({ user }) {
 
     useEffect(() => {
         const fetchData = async () => {
-            const response = await getUsersByPersonal(user.id);
-
-            if (response && response.data && response.data["data"]) {
-                setResponse(response.data["data"]);
+            try {
+                const response = await getUsersByPersonal(user.id);
+    
+                if (response && response.data && response.data["data"]) {
+                    setResponse(response.data["data"]);
+                } else {
+                    setResponse([])
+                }
+            } catch (error) {
+                setResponse([])
             }
         }
 
