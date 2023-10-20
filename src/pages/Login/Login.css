@@ -23,7 +23,7 @@ body {
     background-color: white;
 
     color: black;
-    
+
     width: 30%;
     max-width: 500px;
     min-width: 300px;
@@ -144,4 +144,34 @@ button.login {
 
 .forgot-password a:hover {
     color: #098BB3;
+}
+
+.password-input {
+    position: relative;
+    width: 100%;
+}
+
+.toggle-password-button {
+    position: absolute;
+    right: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    z-index: 1;
+    background: none;
+    border: none;
+}
+
+.toggle-password-button .eye-open {
+    font-size: 1.2rem;
+    color: #000000;
+}
+
+.toggle-password-button .eye-closed {
+    font-size: 1.2rem;
+    color: #666;
+}
+
+.toggle-password-button:focus {
+    outline: none;
 }

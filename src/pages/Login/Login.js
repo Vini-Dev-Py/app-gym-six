@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Login.css';
 import { signIn } from '../../services/auth';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 
 export default function Login({ onLoginSuccess }) {
 
@@ -9,6 +11,7 @@ export default function Login({ onLoginSuccess }) {
     const [password, setPassword] = useState('');
     const [response, setResponse] = useState(null);
     const [hasError, setHasError] = useState(false);
+    const [showPassword, setShowPassword] = useState(false);
     const navigate = useNavigate();
 
     async function login(email, password) {
@@ -20,6 +23,8 @@ export default function Login({ onLoginSuccess }) {
     const handlerLogin = async () => {
         await login(email, password);
     };
+
+    const passwordInputType = showPassword ? 'text' : 'password';
 
     useEffect(() => {
         if (response && response.status) {
@@ -58,14 +63,25 @@ export default function Login({ onLoginSuccess }) {
                                 <span className="textInput">Password</span>
                                 <span className={`invalid ${hasError ? 'show' : ''}`}>Invalido</span>
                             </div>
-                            <input
-                                type="password"
-                                placeholder="s&nh@"
-                                className={`password ${hasError ? 'input-error' : ''}`}
-                                id="input_pass"
-                                value={password}
-                                onChange={(e) => setPassword(e.target.value)}
-                            />
+                            <div className="password-input">
+                                <input
+                                    type={passwordInputType} // Tipo do campo de senha
+                                    placeholder="s&nh@"
+                                    className={`password ${hasError ? 'input-error' : ''}`}
+                                    id="input_pass"
+                                    value={password}
+                                    onChange={(e) => setPassword(e.target.value)}
+                                />
+                                <button
+                                    className="toggle-password-button"
+                                    onClick={() => setShowPassword(!showPassword)}
+                                >
+                                    <FontAwesomeIcon
+                                        icon={showPassword ? faEye : faEyeSlash}
+                                        className={showPassword ? 'eye-open' : 'eye-closed'}
+                                    />
+                                </button>
+                            </div>
                         </div>
                     </div>
                     <div className="box-buttons">
