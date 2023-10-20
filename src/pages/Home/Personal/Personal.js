@@ -14,7 +14,9 @@ export default function Personal({ user }) {
         const fetchData = async () => {
             const response = await getUsersByPersonal(user.id);
 
-            setResponse(response.data["data"]);
+            if (response && response.data && response.data["data"]) {
+                setResponse(response.data["data"]);
+            }
         }
 
         fetchData();
