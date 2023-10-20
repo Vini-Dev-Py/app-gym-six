@@ -9,6 +9,7 @@ import Training from '../pages/Training/Training';
 import CreateTraining from '../pages/Training/CreateTraining/CreateTraining';
 import UpdateTraining from '../pages/Training/UpdateTraining/UpdateTraining';
 import MemberTraining from '../pages/Training/MemberTraining/MemberTraining';
+import Profile from '../pages/Profile/Profile';
 
 export default function Router() {
     const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -29,6 +30,14 @@ export default function Router() {
                     element={
                         <PrivateRoute isAuthenticated={isAuthenticated}>
                             <Home />
+                        </PrivateRoute>
+                    }
+                />
+                <Route
+                    path="/profile"
+                    element={
+                        <PrivateRoute isAuthenticated={isAuthenticated}>
+                            <Profile />
                         </PrivateRoute>
                     }
                 />

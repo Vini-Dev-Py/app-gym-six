@@ -14,6 +14,10 @@ export default function User({ user }) {
         navigate(url);
     }
 
+    function navigateToProfile() {
+        navigate("/profile");
+    }
+
     return (
         <main>
             <header className="header">
@@ -21,7 +25,7 @@ export default function User({ user }) {
                     <h2>Bem vindo {user.name}</h2>
                 </div>
                 <div>
-                    <button onClick={null} className="button-user">
+                    <button onClick={navigateToProfile} className="button-user">
                         <FontAwesomeIcon className="icon-user" icon={faUser} />
                     </button>
                 </div>
