@@ -240,7 +240,8 @@ header.header {
     justify-content: space-between;
 }
 
-.create-training, .update-training {
+.create-training,
+.update-training {
     appearance: none;
     background-color: #17b31c;
     border: none;
@@ -261,11 +262,13 @@ header.header {
     will-change: transform;
 }
 
-.create-training:disabled, .update-training:disabled {
+.create-training:disabled,
+.update-training:disabled {
     pointer-events: none;
 }
 
-.create-training:hover, .update-training:hover {
+.create-training:hover,
+.update-training:hover {
     box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
     transform: translateY(-2px);
 }
@@ -294,6 +297,16 @@ header.header {
     justify-content: flex-start;
 }
 
+@media (max-width: 600px) {
+    .flex-button-call-personal {
+        justify-content: center;
+    }
+
+    .iframe-pdf {
+        height: 55vh !important;
+    }
+}
+
 .call-personal {
     align-items: center;
     background: #1be710;
@@ -304,14 +317,13 @@ header.header {
     display: inline-flex;
     font-family: Inter, sans-serif;
     font-size: 1rem;
-    font-weight: 700;
     justify-content: center;
     line-height: 24px;
     overflow-wrap: break-word;
-    padding: 18px;
+    padding: 10px 20px;
     text-decoration: none;
     width: auto;
-    border-radius: 8px;
+    border-radius: 5px;
     cursor: pointer;
     touch-action: manipulation;
     transition: 0.5s;
@@ -321,8 +333,22 @@ header.header {
     background: #3eb138;
 }
 
-@media (max-width: 600px) {
-    .flex-button-call-personal {
-        justify-content: center;
-    }
+.download-pdf {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1rem;
+    line-height: 24px;
+    margin: 10px;
+    text-align: center;
+    transition: background-color 0.3s;
+    border: none;
+}
+
+.download-pdf:hover {
+    background-color: #0056b3;
 }

@@ -38,6 +38,10 @@ export default function MemberTraining() {
         window.location.href = whatsappLink;
     }
 
+    function navigateToPdf() {
+        navigate(`/treino/${day}/download`);
+    }
+
     useEffect(() => {
         const fetchData = async () => {
             var user = await getUser();
@@ -95,6 +99,9 @@ export default function MemberTraining() {
             <section className="flex-button-call-personal">
                 <button className="call-personal" onClick={() => notifyPersonal()}>
                     Avisar personal
+                </button>
+                <button className="download-pdf" onClick={() => navigateToPdf()}>
+                    PDF do Treino
                 </button>
             </section>
         </div>

@@ -10,6 +10,7 @@ import CreateTraining from '../pages/Training/CreateTraining/CreateTraining';
 import UpdateTraining from '../pages/Training/UpdateTraining/UpdateTraining';
 import MemberTraining from '../pages/Training/MemberTraining/MemberTraining';
 import Profile from '../pages/Profile/Profile';
+import PdfTraining from '../pages/Training/PDF/pdfTraining';
 
 export default function Router() {
     const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -86,6 +87,14 @@ export default function Router() {
                     element={
                         <PrivateRoute isAuthenticated={isAuthenticated}>
                             <MemberTraining />
+                        </PrivateRoute>
+                    }
+                />
+                <Route
+                    path="/treino/:day/download"
+                    element={
+                        <PrivateRoute isAuthenticated={isAuthenticated}>
+                            <PdfTraining />
                         </PrivateRoute>
                     }
                 />
