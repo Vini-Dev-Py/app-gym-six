@@ -88,9 +88,13 @@ export default function MemberTraining() {
                         </div>
                         {expandedIndex === index && (
                             <div className="expanded-content">
-                                <div className="video-container">
-                                    <YouTube videoId={extractYouTubeVideoId(training.url_video_img)} />
-                                </div>
+                                {training.url_video_img ? ( 
+                                    <div className="video-container">
+                                        <YouTube videoId={extractYouTubeVideoId(training.url_video_img)} />
+                                    </div>
+                                ) : (
+                                    <p>Nenhum vídeo disponível</p> 
+                                )}
                             </div>
                         )}
                     </div>
